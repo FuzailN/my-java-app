@@ -1,6 +1,6 @@
 node{
    stage('SCM Checkout'){
-     git 'https://github.com/FuzailN/my-app.git' 
+     git 'https://github.com/FuzailN/my-java-app.git' 
    }
       stage('maven-buildstage'){
 
