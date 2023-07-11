@@ -3,11 +3,12 @@ node{
      git 'https://github.com/FuzailN/my-java-app.git' 
    }
       stage('maven-buildstage'){
-
-      def mvnHome =  tool name: 'maven3', type: 'maven'   
-      sh "${mvnHome}/bin/mvn clean package"
+	script {
+      	def mvnHome =  tool name: 'maven3', type: 'maven'   
+      	sh "${mvnHome}/bin/mvn clean package"
 	  sh 'mv target/myweb*.war target/newapp.war'
    }
+      }
    stage('Build Docker Image'){
    sh 'docker build -t imfuzail/myweb:0.0.2 .'
    }
