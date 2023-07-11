@@ -1,0 +1,6 @@
+version : "3.3"
+services :
+  web :
+     image : imfuzail/myweb:0.0.2
+     ports :
+         - "8090:8000"
