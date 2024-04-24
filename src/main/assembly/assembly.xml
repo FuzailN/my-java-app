@@ -7,9 +7,27 @@
     </formats>
     <includeBaseDirectory>false</includeBaseDirectory>
     <fileSets>
-    <fileSet>
-      <directory>src/main/output</directory>
-      <outputDirectory>output</outputDirectory>
-    </fileSet>
-  </fileSets>
+        <fileSet>
+            <directory>${project.build.directory}</directory>
+            <outputDirectory>/</outputDirectory>
+            <includes>
+                <include>${project.build.finalName}.${project.packaging}</include>
+            </includes>
+        </fileSet>
+        <fileSet>
+            <directory>src/main/bin</directory>
+            <outputDirectory>bin</outputDirectory>
+            <includes>
+                <include>*.sh</include>
+            </includes>
+        </fileSet>
+        <fileSet>
+            <directory>src/main/conf</directory>
+            <outputDirectory>conf</outputDirectory>
+        </fileSet>
+        <fileSet>
+            <directory>src/main/lib</directory>
+            <outputDirectory>lib</outputDirectory>
+        </fileSet>
+    </fileSets>
 </assembly>
